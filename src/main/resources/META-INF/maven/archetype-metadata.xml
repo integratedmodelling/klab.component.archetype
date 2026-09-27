@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0 https://maven.apache.org/xsd/archetype-descriptor-1.2.0.xsd"
+        name="klab-component">
+    <requiredProperties>
+        <requiredProperty key="componentDescription">
+            <defaultValue>A k.LAB component</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="vendorName">
+            <defaultValue>Integrated Modelling Partnership</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="vendorEmail">
+            <defaultValue>info@integratedmodelling.org</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="licenseName">
+            <defaultValue>GNU Affero GPL 3.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="usageRights">
+            <defaultValue>*</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="klabVersion">
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="klabProductVersion">
+            <defaultValue>1.0.1-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeLibrary">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeAgents">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeAdapter">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeIO">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeAuthority">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+    <fileSets>
+        <fileSet filtered="true" packaged="false">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false" packaged="false">
+            <directory></directory>
+            <includes>
+                <include>LICENSE.txt</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ComponentPlugin.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" includeCondition="${includeLibrary}">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ExampleLibrary.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" includeCondition="${includeAgents}">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ExampleAgents.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" includeCondition="${includeAdapter}">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ExampleAdapter.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" includeCondition="${includeIO}">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ExampleIO.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" includeCondition="${includeAuthority}">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>ExampleAuthority.java</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>
