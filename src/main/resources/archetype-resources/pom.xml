@@ -89,6 +89,7 @@
             <groupId>org.integratedmodelling</groupId>
             <artifactId>klab.core.services</artifactId>
             <version>${klabVersion}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -113,8 +114,9 @@
                             <componentClass>${package}.ComponentPlugin</componentClass>
                             <componentVersion>${version}</componentVersion>
                             <hostRuntimeArtifacts>
-                                org.integratedmodelling:klab.service.runtime.server:${klabVersion},
-                                org.integratedmodelling:klab.service.resources.server:${klabVersion}
+                                org.integratedmodelling:klab.services.reasoner.server:${klabVersion},
+                                org.integratedmodelling:klab.services.runtime.server:${klabVersion},
+                                org.integratedmodelling:klab.services.resources.server:${klabVersion}
                             </hostRuntimeArtifacts>
                         </configuration>
                     </execution>

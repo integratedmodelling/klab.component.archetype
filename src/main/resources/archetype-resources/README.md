@@ -27,3 +27,13 @@ License version 3, matching the default POM metadata.
 
 Delete or replace the generated examples as the implementation grows. Extension names are public
 and must remain unique across installed components.
+
+The authority starter implements the current `api.services.Authority` contract, has a public
+no-argument constructor, and advertises the same URN as its annotation. Its configuration and
+resolution operations deliberately throw until a vocabulary is implemented. Add independent
+configuration state, canonical identities, diagnostics, and release handling before using it.
+Host k.LAB dependencies use `provided` scope. Packaging targets Reasoner, Runtime and Resources.
+
+Build against matching current k.LAB snapshots. An annotation error about missing `urn`, `version`
+or `embeddable`, or a required legacy `name`, means the resolved API is older than this template;
+refresh or rebuild the k.LAB dependencies rather than changing back to the legacy contract.

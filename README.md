@@ -114,3 +114,9 @@ Sonatype currently retains snapshots for 90 days. See the
 After a missing artifact is published again, use `mvn -U clean install` to retry cached failed
 lookups and refresh snapshots. Different cached builds of the same `-SNAPSHOT` version can
 expose different APIs; use released versions when reproducible builds are required.
+
+The generated authority starter implements the current service Authority contract and deliberately
+rejects configuration until a vocabulary is implemented. Generated components use provided host
+dependencies and target the plural `klab.services.*.server` coordinates, including the Reasoner.
+An API requiring the old annotation `name` instead of `urn`/`version` indicates stale k.LAB snapshots;
+refresh or rebuild matching dependencies before compiling generated projects.
